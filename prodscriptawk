@@ -1,0 +1,25 @@
+BEGIN {
+ print "API", "min", "ave", "max" 
+}
+{ 
+ apiNameArray[$1] += $2
+ execTimeArray[$1]++;
+
+}
+END{ 
+for(var in apiNameArray)
+  { 
+	avr = apiNameArray[var] / execTimeArray[var];
+	print var, avr;
+  }
+}
+ 		
+
+
+
+
+
+
+
+
+
